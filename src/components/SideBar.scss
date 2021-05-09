@@ -1,0 +1,13 @@
+@import './Settings';
+
+.sidebar {
+  position: relative;
+  padding: 3.6rem;
+  // box-shadow: -0.4rem 0 1.2rem #94949434;
+  z-index: 10;
+  border-right: 1px solid #f3f3f3;
+
+  .form-wrapper {
+    width: 240px;
+  }
+}
