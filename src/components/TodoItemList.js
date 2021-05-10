@@ -9,17 +9,19 @@ class TodoItemList extends Component {
   }
 
   render() {
-    const { todos, onToggle, onRemove } = this.props;
+    const { todos, onToggle, onRemove, onToggleBookmark } = this.props;
 
     const todoList = todos.map(
-      ({ id, text, checked, color }) => (
+      ({ id, text, checked, bookmark, color }) => (
         <TodoItem
           id={id}
           text={text}
           checked={checked}
+          bookmark={bookmark}
           color={color}
           onToggle={onToggle}
           onRemove={onRemove}
+          onToggleBookmark={onToggleBookmark}
           key={id}
         />
       )

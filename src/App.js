@@ -31,6 +31,7 @@ class App extends Component {
         id: this.id++,
         text: input,
         checked: false,
+        bookmark: false,
         color
       })
     })
@@ -79,6 +80,25 @@ class App extends Component {
     })
   }
 
+  handleBookmark = (id) => {
+    const { todos } = this.state;
+
+    const index = todos.findIndex(todo => todo.id === id);
+    const selected = todos[index];
+
+    const nextTodos = [...todos];
+
+    nextTodos[index] = {
+      ...selected,
+      bookmark: !selected.bookmark
+    };
+
+    this.setState({
+      todos: nextTodos
+    })
+  }
+
+
   render() {
     const { input, todos, color } = this.state;
     const {
@@ -87,7 +107,8 @@ class App extends Component {
       handleKeyPress,
       handleToggle,
       handleRemove,
-      handleSelectColor
+      handleSelectColor,
+      handleBookmark
     } = this;
 
 
@@ -105,7 +126,7 @@ class App extends Component {
           } />
 
         <TodoTemplate>
-          <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove} />
+          <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove} onToggleBookmark={handleBookmark} />
         </TodoTemplate>
       </div >
     );
