@@ -44,6 +44,9 @@ class TodoItem extends Component {
             <BiCopy size={24} color={'#FFFFFF'} />
           </div>
         </div>
+        <div className="checked-bg" style={
+          checked ? ({ opacity: '1' }) : ({ opacity: '0' })
+        }></div>
       </div>
     )
   }
