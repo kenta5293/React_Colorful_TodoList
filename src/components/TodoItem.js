@@ -14,7 +14,7 @@ class TodoItem extends Component {
 
     return (
       <div className="todo-item" style={{ backgroundColor: color }}>
-        <div className="bookmark" onClick={() => onToggleBookmark(id)}>
+        <div className="bookmark top-btn" onClick={() => onToggleBookmark(id)}>
           {
             bookmark ? (
               <AiFillStar size={16} color={'#FFDA1E'} />
@@ -44,9 +44,11 @@ class TodoItem extends Component {
             <BiCopy size={24} color={'#FFFFFF'} />
           </div>
         </div>
-        <div className="checked-bg" style={
+        <div className={`checked-bg ${checked ? 'checked' : 'none'}`} style={
           checked ? ({ opacity: '1' }) : ({ opacity: '0' })
-        }></div>
+        }>
+          <BiCheck size={200} color={'#FFFFFF'} />
+        </div>
       </div>
     )
   }

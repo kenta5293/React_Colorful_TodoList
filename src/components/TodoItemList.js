@@ -28,9 +28,9 @@ class TodoItemList extends Component {
     );
 
     return (
-      <div className="todos-wrapper">
+      <section className="todos-wrapper">
         {todoList}
-      </div>
+      </section>
     )
   }
 }

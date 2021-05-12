@@ -5,7 +5,7 @@ const TodoTemplate = ({ children }) => {
   return (
     <main className="main">
       <header>
-        YOU
+        <h1>Notes</h1>
       </header>
       {children}
     </main>
