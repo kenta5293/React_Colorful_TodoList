@@ -6,7 +6,7 @@ import Form from './components/Form';
 import Palette from './components/Palette';
 import TodoItemList from './components/TodoItemList';
 
-const colors = ['#ffffff', '#f6e25d', '#f03e3e', '#12b886', '#229ae6'];
+const colors = ['#ffffff', '#FFE2F5', '#ADFF85', '#FFBE74', '#CBF4FF'];
 
 class App extends Component {
   id = 1;

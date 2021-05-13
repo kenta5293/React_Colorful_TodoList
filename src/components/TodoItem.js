@@ -47,7 +47,7 @@ class TodoItem extends Component {
         <div className={`checked-bg ${checked ? 'checked' : 'none'}`} style={
           checked ? ({ opacity: '1' }) : ({ opacity: '0' })
         }>
-          <BiCheck size={200} color={'#FFFFFF'} />
+          <BiCheck size={100} color={'#21F68B'} />
         </div>
       </div>
     )
