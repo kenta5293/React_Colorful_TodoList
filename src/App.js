@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import TodoTemplate from './components/TodoTemplate';
-import SideBar from './components/SideBar';
-import Form from './components/Form';
-import Palette from './components/Palette';
-import TodoItemList from './components/TodoItemList';
+import TodoTemplate from './Components/TodoTemplate';
+import SideBar from './Components/SideBar';
+import Form from './Components/Form';
+import Palette from './Components/Palette';
+import TodoItemList from './Components/TodoItemList';
 
 const colors = ['#ffffff', '#FFE2F5', '#ADFF85', '#FFBE74', '#CBF4FF'];
 

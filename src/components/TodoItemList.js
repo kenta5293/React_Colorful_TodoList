@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './TodoItemList.scss';
 import TodoItem from './TodoItem';
 
@@ -13,23 +14,27 @@ class TodoItemList extends Component {
 
     const todoList = todos.map(
       ({ id, text, checked, bookmark, color }) => (
-        <TodoItem
-          id={id}
-          text={text}
-          checked={checked}
-          bookmark={bookmark}
-          color={color}
-          onToggle={onToggle}
-          onRemove={onRemove}
-          onToggleBookmark={onToggleBookmark}
-          key={id}
-        />
+        <CSSTransition key={id} classNames="todo-animate" timeout={{ appear: 100, enter: 400, exit: 800 }}>
+          <TodoItem
+            id={id}
+            text={text}
+            checked={checked}
+            bookmark={bookmark}
+            color={color}
+            onToggle={onToggle}
+            onRemove={onRemove}
+            onToggleBookmark={onToggleBookmark}
+            key={id}
+          />
+        </CSSTransition>
       )
     );
 
     return (
       <section className="todos-wrapper">
-        {todoList}
+        <TransitionGroup className="todos-wrapper" >
+          {todoList}
+        </TransitionGroup>
       </section>
     )
   }

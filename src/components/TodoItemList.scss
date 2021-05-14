@@ -1,13 +1,6 @@
 @import "./Settings";
-
-.todos-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  align-content: flex-start;
-  width: 100%;
+section.todos-wrapper {
   height: 100vh;
-  padding: 0 6.5rem;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
@@ -21,5 +14,40 @@
     &:hover {
       background-color: #b1b1b1;
     }
+  }
+
+
+  div.todos-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+    padding: 0 5rem;
+    transition: 0.2s;
+  
+    .todo-animate-enter {
+      opacity: 0;
+      transform: translateX(-50%) scale(0.5);
+      transition: 0.2s;
+    }
+
+    .todo-animate-enter-active {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+      transition: opacity 0.4s, transform 0.4s;
+    }
+
+    .todo-animate-exit {
+      opacity: 1;
+      transform: translateX(0) scale(1);
+    }
+
+    .todo-animate-exit-active {
+      opacity: 0;
+      transform: translateX(2rem) scale(0.9);
+      transition: opacity 0.8s, transform 0.8s;
+    }
+
   }
 }
