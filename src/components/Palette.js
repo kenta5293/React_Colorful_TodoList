@@ -3,7 +3,7 @@ import './Palette.scss';
 
 const Color = ({ color, active, onClick }) => {
   return (
-    <div className={`color ${active && 'active'}`} style={{ backgroundColor: color }} onClick={onClick}>
+    <div className={`color ${active ? 'active' : ''}`} style={{ backgroundColor: color }} onClick={onClick}>
     </div>
   )
 }
@@ -14,7 +14,7 @@ const Palette = ({ colors, selected, onSelect }) => {
   );
 
   return (
-    <div className="palette">
+    <div className="palette" style={{ backgroundColor: selected }}>
       {colorList}
     </div>
   )

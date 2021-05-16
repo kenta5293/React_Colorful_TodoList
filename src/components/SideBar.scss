@@ -4,10 +4,12 @@
   position: relative;
   padding: 3.6rem;
   z-index: 10;
-  background-color: #FFFFFF;
-  border-right: 1px solid #EEEEEE;
+  border-right: 1px solid #EDEBED;
 
   .form-wrapper {
-    width: 270px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
   }
 }

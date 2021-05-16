@@ -1,6 +1,7 @@
 @import "./Settings";
 section.todos-wrapper {
   height: 100vh;
+  padding: 0 5rem;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
@@ -23,7 +24,7 @@ section.todos-wrapper {
     justify-content: flex-start;
     align-content: flex-start;
     width: 100%;
-    padding: 0 5rem;
+    margin: 0 auto;
     transition: 0.2s;
   
     .todo-animate-enter {

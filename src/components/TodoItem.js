@@ -14,7 +14,9 @@ class TodoItem extends Component {
 
     return (
       <div className="todo-item" style={{ backgroundColor: color }}>
-        <div className="bookmark top-btn" onClick={() => onToggleBookmark(id)}>
+        <div className="bookmark" onClick={() => {
+          onToggleBookmark(id);
+        }}>
           {
             bookmark ? (
               <AiFillStar size={16} color={'#FFDA1E'} />

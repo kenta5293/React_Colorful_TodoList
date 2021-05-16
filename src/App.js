@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import './App.css';
 import TodoTemplate from './Components/TodoTemplate';
 import SideBar from './Components/SideBar';
-import Form from './Components/Form';
+import PostForm from './Components/PostForm';
 import Palette from './Components/Palette';
 import TodoItemList from './Components/TodoItemList';
+import SearchForm from './Components/SearchForm';
 
-const colors = ['#ffffff', '#FFE2F5', '#ADFF85', '#FFBE74', '#CBF4FF'];
+const colors = ['#F5CEC7', '#E89897', '#FFC98B', '#FFB284', '#C7C19D'];
 
 class App extends Component {
   id = 1;
@@ -14,7 +15,7 @@ class App extends Component {
   state = {
     input: '',
     todos: [],
-    color: '#ffffff'
+    color: '#F5CEC7'
   }
 
   handleChange = (e) => {
@@ -117,7 +118,7 @@ class App extends Component {
         <SideBar
           palette={<Palette colors={colors} selected={color} onSelect={handleSelectColor} />}
           form={
-            <Form
+            <PostForm
               color={color}
               value={input}
               // onKeyPress={handleKeyPress}
@@ -125,7 +126,7 @@ class App extends Component {
               onCreate={handleCreate} />
           } />
 
-        <TodoTemplate>
+        <TodoTemplate search={<SearchForm />}>
           <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove} onToggleBookmark={handleBookmark} />
         </TodoTemplate>
       </div >

@@ -1,12 +1,11 @@
 import React from 'react';
 import './TodoTemplate.scss';
+import Header from './Header';
 
-const TodoTemplate = ({ children }) => {
+const TodoTemplate = ({ children, search }) => {
   return (
     <main className="main">
-      <header>
-        <h1>Notes</h1>
-      </header>
+      <Header search={search} />
       {children}
     </main>
   );

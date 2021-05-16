@@ -1,11 +1,11 @@
 import React from 'react';
 import { IoMdCreate } from 'react-icons/io'
-import './Form.scss';
+import './PostForm.scss';
 
 const Form = ({ value, color, onChange, onCreate, onKeyPress }) => {
   return (
     <div className="form" style={{ backgroundColor: color }}>
-      <textarea value={value} onChange={onChange} onKeyPress={onKeyPress} />
+      <textarea value={value} onChange={onChange} onKeyPress={onKeyPress} spellCheck="false" />
       <div className="form-bottom">
         <div className="form-date">
         </div>
