@@ -6,7 +6,7 @@ class Header extends Component {
     const { search } = this.props;
     return (
       <header>
-        {/* {children} */}
+        {search}
         <h1>Notes</h1>
       </header>
     )

@@ -1,119 +1,122 @@
 @import "./Settings";
 
 .todo-item {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 250px;
-  height: 250px;
-  padding: 2.8rem 2.2rem;
-  margin: 1.2rem;
-  border-radius: 1.4rem;
-  box-shadow: 0 0.2rem 1.2rem #BDBCBC33;
-  overflow: hidden;
-
-  .bookmark {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    align-self: flex-end;
-    width: 2.8rem;
-    height: 2.8rem;
-    margin: 0 0 1rem 0;
-    border-radius: 50%;
-    background-color: #0F1119;
-    cursor: pointer;
-    z-index: 51;
-
-    &:hover path {
-      fill: #FFDA1E;
-    }
-
-    path {
-      transition: 0.2s;
-    }
-  }
-
-  .todo-text {
+    flex-direction: column;
     position: relative;
-    z-index: 49;
-    width: 100%;
-    height: 157px;
-    padding: 0 0.6rem;
-    font-family: '나눔바른고딕';
-    font-size: 1.4rem;
-    font-weight: 700;
-    line-height: 2rem;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    user-select: none;
-    overflow-y: scroll;
-  }
+    width: 250px;
+    height: 250px;
+    padding: 2.8rem 2.2rem;
+    margin: 1.2rem;
+    border-radius: 1.4rem;
+    box-shadow: 0 0.2rem 1.2rem #bdbcbc33;
+    overflow: hidden;
 
-  .todo-hide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0; bottom: 0;
-    left: 0; right: 0;
-    z-index: 50;
-    background-color: #ffffff80;
-    transition: 0.2s;
-    opacity: 0;
-    visibility: hidden;
+    .bookmark {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: flex-end;
+        width: 2.8rem;
+        height: 2.8rem;
+        margin: 0 0 1rem 0;
+        border-radius: 50%;
+        background-color: #0f1119;
+        cursor: pointer;
+        z-index: 51;
 
-    .todo-btn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 4.4rem;
-      height: 4.4rem;
-      border-radius: 50%;
-      background-color: #0F1119;
-      cursor: pointer;
-      transition: 0.2s;
-      
-      &+.todo-btn {
-        margin-left: 0.8rem;
-      }
-
-      &:hover {
-        background-color: $main-color;
-      }
-
-      &.check {
-        path {
-          transition: 0.2s;
+        &:hover path {
+            fill: #ffda1e;
         }
 
-       &:hover path {
-         fill: #21F68B;
-       } 
-      }
+        path {
+            transition: 0.2s;
+        }
     }
-  }
-  
-  &:hover .todo-hide {
-    opacity: 1;
-    visibility: visible;
-  }
 
-  .checked-bg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    left: 0; right: 0;
-    z-index: 48;
-    width: 100%;
-    height: 100%;
-    transform: scale(0);
-    transition: 0.2s;
-
-    &.checked {
-      transform: scale(1);
+    .todo-text {
+        position: relative;
+        z-index: 49;
+        width: 100%;
+        height: 157px;
+        padding: 0 0.6rem;
+        font-family: "나눔바른고딕";
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 2rem;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        user-select: none;
+        overflow-y: scroll;
     }
-  }
+
+    .todo-hide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        background-color: #ffffff80;
+        transition: 0.2s;
+        opacity: 0;
+        visibility: hidden;
+
+        .todo-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 4.4rem;
+            height: 4.4rem;
+            border-radius: 50%;
+            background-color: #0f1119;
+            cursor: pointer;
+            transition: 0.2s;
+
+            & + .todo-btn {
+                margin-left: 0.8rem;
+            }
+
+            &:hover {
+                background-color: $main-color;
+            }
+
+            &.check {
+                path {
+                    transition: 0.2s;
+                }
+
+                &:hover path {
+                    fill: #21f68b;
+                }
+            }
+        }
+    }
+
+    &:hover .todo-hide {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .checked-bg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 48;
+        width: 100%;
+        height: 100%;
+        transform: scale(0);
+        transition: 0.2s;
+
+        &.checked {
+            transform: scale(1);
+        }
+    }
 }

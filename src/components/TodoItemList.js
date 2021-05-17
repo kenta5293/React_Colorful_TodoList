@@ -4,7 +4,6 @@ import './TodoItemList.scss';
 import TodoItem from './TodoItem';
 
 class TodoItemList extends Component {
-
   shouldComponentUpdate(nextProps, nextState) {
     return this.props.todos !== nextProps.todos;
   }
@@ -14,7 +13,7 @@ class TodoItemList extends Component {
 
     const todoList = todos.map(
       ({ id, text, checked, bookmark, color }) => (
-        <CSSTransition key={id} classNames="todo-animate" timeout={{ appear: 100, enter: 400, exit: 800 }}>
+        <CSSTransition key={id} classNames="todo-animate" timeout={{ appear: 100, enter: 400, exit: 1200 }}>
           <TodoItem
             id={id}
             text={text}

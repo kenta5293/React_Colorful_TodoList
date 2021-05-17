@@ -1,54 +1,52 @@
 @import "./Settings";
 section.todos-wrapper {
-  height: 100vh;
-  padding: 0 5rem;
-  overflow-y: scroll;
+    height: 100vh;
+    padding: 0 5rem;
+    overflow-y: scroll;
 
-  &::-webkit-scrollbar {
-    background-color: #ffffff00;
-    width: 0.6rem;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: #b4b4b4;
-    border-radius: 1rem;
-    
-    &:hover {
-      background-color: #b1b1b1;
+    &::-webkit-scrollbar {
+        background-color: #ffffff00;
+        width: 0.6rem;
     }
-  }
+    &::-webkit-scrollbar-thumb {
+        background-color: #b4b4b4;
+        border-radius: 1rem;
 
-
-  div.todos-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    width: 100%;
-    margin: 0 auto;
-    transition: 0.2s;
-  
-    .todo-animate-enter {
-      opacity: 0;
-      transform: translateX(-50%) scale(0.5);
-      transition: 0.2s;
+        &:hover {
+            background-color: #b1b1b1;
+        }
     }
 
-    .todo-animate-enter-active {
-      opacity: 1;
-      transform: translateX(0) scale(1);
-      transition: opacity 0.4s, transform 0.4s;
-    }
+    div.todos-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        width: 100%;
+        margin: 0 auto;
+        transition: 0.2s;
 
-    .todo-animate-exit {
-      opacity: 1;
-      transform: translateX(0) scale(1);
-    }
+        .todo-animate-enter {
+            opacity: 0;
+            transform: translateX(-50%) scale(0.5);
+            transition: 0.2s;
+        }
 
-    .todo-animate-exit-active {
-      opacity: 0;
-      transform: translateX(2rem) scale(0.9);
-      transition: opacity 0.8s, transform 0.8s;
-    }
+        .todo-animate-enter-active {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+            transition: opacity 0.4s, transform 0.4s;
+        }
 
-  }
+        .todo-animate-exit {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+        }
+
+        .todo-animate-exit-active {
+            opacity: 0;
+            transform: translateX(2rem) scale(0.9);
+            transition: opacity 0.8s, transform 0.8s;
+        }
+    }
 }
