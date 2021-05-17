@@ -62,8 +62,13 @@
         z-index: 50;
         background-color: #ffffff80;
         transition: 0.2s;
-        opacity: 0;
         visibility: hidden;
+        opacity: 0;
+
+        &.menu-view {
+            visibility: visible;
+            opacity: 1;
+        }
 
         .todo-btn {
             display: flex;
@@ -96,10 +101,10 @@
         }
     }
 
-    &:hover .todo-hide {
-        opacity: 1;
-        visibility: visible;
-    }
+    // &:hover .todo-hide {
+    //     opacity: 1;
+    //     visibility: visible;
+    // }
 
     .checked-bg {
         display: flex;

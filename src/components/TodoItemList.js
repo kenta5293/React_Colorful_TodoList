@@ -9,20 +9,22 @@ class TodoItemList extends Component {
   }
 
   render() {
-    const { todos, onToggle, onRemove, onToggleBookmark } = this.props;
+    const { todos, onToggle, onRemove, onToggleBookmark, onToggleMenu } = this.props;
 
     const todoList = todos.map(
-      ({ id, text, checked, bookmark, color }) => (
+      ({ id, text, checked, bookmark, menu, color }) => (
         <CSSTransition key={id} classNames="todo-animate" timeout={{ appear: 100, enter: 400, exit: 1200 }}>
           <TodoItem
             id={id}
             text={text}
             checked={checked}
             bookmark={bookmark}
+            menu={menu}
             color={color}
             onToggle={onToggle}
             onRemove={onRemove}
             onToggleBookmark={onToggleBookmark}
+            onToggleMenu={onToggleMenu}
             key={id}
           />
         </CSSTransition>

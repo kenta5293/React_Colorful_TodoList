@@ -4,17 +4,17 @@ import { AiFillStar } from 'react-icons/ai';
 import './TodoItem.scss';
 
 class TodoItem extends Component {
-
   shouldComponentUpdate(nextProps, nextState) {
-    return this.props.checked !== nextProps.checked || this.props.bookmark !== nextProps.bookmark;
-  }
+    return this.props.checked !== nextProps.checked || this.props.bookmark !== nextProps.bookmark || this.props.menu !== nextProps.menu;
+  };
 
   render() {
-    const { text, checked, bookmark, id, color, onToggle, onRemove, onToggleBookmark } = this.props;
+    const { text, checked, bookmark, menu, id, color, onToggle, onRemove, onToggleBookmark, onToggleMenu } = this.props;
 
     return (
-      <div className="todo-item" style={{ backgroundColor: color }}>
-        <div className="bookmark" onClick={() => {
+      <div className="todo-item" style={{ backgroundColor: color }} onClick={() => {onToggleMenu(id)}}>
+        <div className="bookmark" onClick={(e) => {
+          e.stopPropagation();
           onToggleBookmark(id);
         }}>
           {
@@ -28,12 +28,14 @@ class TodoItem extends Component {
         <div className={`todo-text ${checked && 'checked'}`}>
           <div>{text}</div>
         </div>
-        <div className="todo-hide">
+        <div className={`todo-hide ${ menu ? ('menu-view'):('none') }`}>
           <div className="remove todo-btn" onClick={(e) => {
             e.stopPropagation(); //onToggle 이 실행되지 않도록 함.
             onRemove(id);
           }}><BiX size={32} color={'#F94269'} /></div>
-          <div className="check todo-btn" onClick={() => onToggle(id)}>
+          <div className="check todo-btn" onClick={(e) => {
+            e.stopPropagation();
+            onToggle(id)}}>
             {
               checked ? (
                 <BiCheck size={32} color={'#21F68B'} />

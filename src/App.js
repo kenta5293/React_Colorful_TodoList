@@ -33,6 +33,7 @@ class App extends Component {
         text: input,
         checked: false,
         bookmark: false,
+        menu: false,
         color
       })
     })
@@ -99,6 +100,23 @@ class App extends Component {
     })
   }
 
+  handleTodoMenu = (id) => {
+    const { todos } = this.state;
+
+    const index = todos.findIndex(todo => todo.id === id);
+    const selected = todos[index];
+
+    const nextTodos = [...todos];
+
+    nextTodos[index] = {
+      ...selected,
+      menu: !selected.menu
+    };
+
+    this.setState({
+      todos: nextTodos
+    })
+  }
 
   render() {
     const { input, todos, color } = this.state;
@@ -109,7 +127,8 @@ class App extends Component {
       handleToggle,
       handleRemove,
       handleSelectColor,
-      handleBookmark
+      handleBookmark,
+      handleTodoMenu
     } = this;
 
 
@@ -127,7 +146,7 @@ class App extends Component {
           } />
 
         <TodoTemplate search={<SearchForm />}>
-          <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove} onToggleBookmark={handleBookmark} />
+          <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove} onToggleBookmark={handleBookmark} onToggleMenu={handleTodoMenu} />
         </TodoTemplate>
       </div >
     );
