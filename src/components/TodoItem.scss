@@ -24,6 +24,11 @@
         background-color: #0f1119;
         cursor: pointer;
         z-index: 51;
+        transition: 0.2s;
+
+        &:hover {
+            background-color: $btn-hover-color;
+        }
 
         &:hover path {
             fill: #ffda1e;
@@ -61,13 +66,13 @@
         right: 0;
         z-index: 50;
         background-color: #ffffff80;
-        transition: 0.2s;
-        visibility: hidden;
         opacity: 0;
+        visibility: hidden;
+        transition: 0.2s;
 
         &.menu-view {
-            visibility: visible;
             opacity: 1;
+            visibility: visible;
         }
 
         .todo-btn {
@@ -86,7 +91,7 @@
             }
 
             &:hover {
-                background-color: $main-color;
+                background-color: $btn-hover-color;
             }
 
             &.check {

@@ -15,7 +15,8 @@ class App extends Component {
   state = {
     input: '',
     todos: [],
-    color: '#F5CEC7'
+    color: '#F5CEC7',
+    searchKeyword: ''
   }
 
   handleChange = (e) => {
@@ -118,8 +119,19 @@ class App extends Component {
     })
   }
 
+  handleSearchKeyword = (e) => {
+    this.setState({
+      searchKeyword: e.target.value
+    });
+  }
+
   render() {
-    const { input, todos, color } = this.state;
+    const { input, todos, color, searchKeyword } = this.state;
+
+    const filterTodo = todos.filter((todos) => {
+      return todos.text.toLowerCase().includes(searchKeyword);
+    })
+
     const {
       handleChange,
       handleCreate,
@@ -128,7 +140,8 @@ class App extends Component {
       handleRemove,
       handleSelectColor,
       handleBookmark,
-      handleTodoMenu
+      handleTodoMenu,
+      handleSearchKeyword
     } = this;
 
 
@@ -145,9 +158,10 @@ class App extends Component {
               onCreate={handleCreate} />
           } />
 
-        <TodoTemplate search={<SearchForm />}>
-          <TodoItemList todos={todos} onToggle={handleToggle} onRemove={handleRemove} onToggleBookmark={handleBookmark} onToggleMenu={handleTodoMenu} />
+        <TodoTemplate search={<SearchForm onSearch={handleSearchKeyword} />}>
+          <TodoItemList todos={filterTodo} onToggle={handleToggle} onRemove={handleRemove} onToggleBookmark={handleBookmark} onToggleMenu={handleTodoMenu} />
         </TodoTemplate>
+        <div className="cursor"></div>
       </div >
     );
   }

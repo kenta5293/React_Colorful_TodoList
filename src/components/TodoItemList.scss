@@ -46,7 +46,7 @@ section.todos-wrapper {
         .todo-animate-exit-active {
             opacity: 0;
             transform: translateX(2rem) scale(0.9);
-            transition: opacity 0.8s, transform 0.8s;
+            transition: opacity 0.6s, transform 0.6s;
         }
     }
 }
