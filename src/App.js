@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
-import TodoTemplate from './Components/TodoTemplate';
-import SideBar from './Components/SideBar';
-import PostForm from './Components/PostForm';
-import Palette from './Components/Palette';
-import TodoItemList from './Components/TodoItemList';
-import SearchForm from './Components/SearchForm';
+import TodoTemplate from './components/TodoTemplate';
+import SideBar from './components/SideBar';
+import PostForm from './components/PostForm';
+import Palette from './components/Palette';
+import TodoItemList from './components/TodoItemList';
+import SearchForm from './components/SearchForm';
 
 const colors = ['#F5CEC7', '#E89897', '#FFC98B', '#FFB284', '#C7C19D'];
 

@@ -3,24 +3,32 @@
 
 @font-face {
   font-family: '나눔바른고딕-thin';
-  src: url('../Fonts/NANUMBARUNGOTHICULTRALIGHT.TTF');
+  src: url('../fonts/NANUMBARUNGOTHICULTRALIGHT.TTF');
   weight: 400;
 }
 
 @font-face {
   font-family: '나눔바른고딕-light';
-  src: url('../Fonts/NANUMBARUNGOTHICLIGHT.TTF');
+  src: url('../fonts/NANUMBARUNGOTHICLIGHT.TTF');
   weight: 400;
 }
 
 @font-face {
   font-family: '나눔바른고딕';
-  src: url('../Fonts/NANUMBARUNGOTHIC.TTF');
+  src: url('../fonts/NANUMBARUNGOTHIC.TTF');
   weight: 400;
 }
 
 @font-face {
   font-family: '나눔바른고딕-bold';
-  src: url('../Fonts/NANUMBARUNGOTHICBOLD.TTF');
+  src: url('../fonts/NANUMBARUNGOTHICBOLD.TTF');
+  weight: 400;
+}
+
+
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSans-Regular.ttf');
   weight: 400;
 }

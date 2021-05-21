@@ -1,1 +1,30 @@
 @import "./Settings";
+
+.search-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6rem;
+  
+  .search-input {
+    position: relative;
+    margin-left: 0.8rem;
+    font-size: 1.6rem;
+    border: 0;
+    outline: none;
+    font-family: 'OpenSans', '나눔바른고딕';
+    font-weight: 900;
+    color: #B8B8B8;
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button,
+    &::-webkit-search-results-button,
+    &::-webkit-search-results-decoration {
+      display: none;
+    }
+
+    &::placeholder {
+      color: #B8B8B8;
+    }
+
+  }
+}

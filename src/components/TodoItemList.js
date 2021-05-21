@@ -13,7 +13,7 @@ class TodoItemList extends Component {
 
     const todoList = todos.map(
       ({ id, text, checked, bookmark, menu, color }) => (
-        <CSSTransition key={id} classNames="todo-animate" timeout={{ appear: 100, enter: 400, exit: 600 }}>
+        <CSSTransition key={id} classNames="todo-animate" timeout={{ appear: 600, enter: 600, exit: 600 }}>
           <TodoItem
             id={id}
             text={text}
